@@ -22,7 +22,7 @@ Servo servo;
 
 void setup() {
   Serial.begin(9600);
-  lcd.init();    // initialize the lcd 
+  lcd.init();   // initialize the lcd 
   lcd.backlight();
   SPI.begin();  // Init SPI bus.
   mfrc522.PCD_Init();  // Init MFRC522 card.
