@@ -10,6 +10,7 @@ The project was developed by Nikolay Dmitrenko in 2021
 #define SS_PIN 10
 #define RST_PIN 9
 int piezoPin = 3; //The pin to which the piezo speaker is connected.
+int ServoPin = 8; // servo pin
 MFRC522 mfrc522(SS_PIN, RST_PIN);
 LiquidCrystal_I2C lcd(0x27,16,2);  // set the LCD address to 0x27 for a 16 chars and 2 line display
 unsigned long uidDec, uidDecTemp;  // to store the label number in decimal format
@@ -25,7 +26,7 @@ void setup() {
   lcd.backlight();
   SPI.begin();  // Init SPI bus.
   mfrc522.PCD_Init();  // Init MFRC522 card.
-  servo.attach(8); // servo pin
+  servo.attach(ServoPin); 
   servo.write(0);  // set the servo to a closed state
 }
 
